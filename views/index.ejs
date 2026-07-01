@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <%- include('navbar', {links: links}) %>
-    <ul>
-  <% users.forEach((user) => { %>
-    <%- include('users/user', {user: user}); %>
-  <% }); %>
+   <div>Hallo</div>
+   <div>
+    <%= message %>
+   </div>
 
-  <%- include('footer', {footerLinks: footerLinks}) %>
-</ul>
+   <ul>
+    <% messages.forEach((message) => { %>
+      <li><%=message.text%></li>
+    <button type="button" onclick="window.location.href='/details/<%= message.id %>'">Details</button>
+     <% }) %>    
+   </ul>
 
+   <a href="/new">Add new message</a>
+  
   </body>
 </html>

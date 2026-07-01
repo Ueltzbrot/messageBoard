@@ -1,29 +1,16 @@
-
-
-const authors = [
-    {id:1, name: 'J.K. Rowling'},
-    {id:2, name: 'George R.R. Martin'},
-    {id:3, name: 'J.R.R. Tolkien'
-    },
+const messages = [
+  {
+    id: 1,
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date()
+  },
+  {
+    id: 2,
+    text: "Hello World!",
+    user: "Charles",
+    added: new Date()
+  }
 ];
 
-async function getAuthorById(authorId){
-    return authors.find(author => author.id === authorId);
-}
-
-const links = [
-  { href: "/", text: "Home" },
-  { href: "/about", text: "About" },
-];
-
-const footerLinks = [
-    {href: "/contact", text: "Contact"},
-    {href: "/privacy", text: "Privacy Policy"},
-    {href: "/terms", text: "Terms of Service"}
-]
-
-module.exports = {
-    getAuthorById,
-    links,
-    footerLinks
-};
+module.exports = { messages };
