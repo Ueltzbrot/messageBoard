@@ -1,20 +1,31 @@
+<!-- views/createUser.ejs -->
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Homepage</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %></title>
   </head>
-  <body>
-    <div>
-        <h1>New Message</h1>
-        <form method="POST" action="/new">
-            <label for="text">Message:</label>
-            <input type="text" name="text" placeholder="Message">
-            
-            <label for="user">User:</label>
-            <input type="text" name="user" placeholder="User">
-            
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-  </body>
+<body>
+  <h1><%= title %></h1>
+  <form action="/create" method="POST">
+    <label for="firstName">First Name: </label>
+    <input type="text" name="firstName" id="firstName" required>
+    <label for="lastName">Last Name: </label>
+    <input type="text" name="lastName" id="lastName" required>
+
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="age">Age: </label>
+    <input type="number" name="age" id="age" required>
+
+    <label for="bio">Bio: </label>
+    <textarea name="bio" id="bio"></textarea>
+     <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to home</a>
+  <%- include("errors.ejs") %>
+
+
+
+</body>
 </html>

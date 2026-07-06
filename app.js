@@ -4,15 +4,15 @@ const path = require("node:path");
 const assetsPath = path.join(__dirname, "public");
 
 const port = process.env.PORT || 3000;
+const {body, validationResult} = require("express-validator");
 app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: false }));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use("/", require("./routes/indexRouter"));
-app.use("/new", require("./routes/newRouter"));
-app.use("/details", require("./routes/detailsRouter"));
+app.use("/", require("./routes/newRouter"));
+app.use("/search", require("./routes/searchRouter"));
 
 
 // error handling middleware
